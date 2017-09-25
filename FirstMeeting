@@ -1,2 +1,16 @@
 9/25/17
-Discuss the idea of Smart cat toy. 
+Discussion: 
+  The idea of Smart cat toy:
+    smart cat toy learning to complete a maze
+  The specs:
+      Arduino Trinket. 
+      Accelerometer.
+      
+  Cars avoinding traffic/other cars
+    implementing self driving cars (avoiding other cars) into smart cat toy
+  Machine learning:
+    How to avoid obstacles?
+    To detect the cat?
+     To detect another mouses?
+     
+  
