@@ -5,17 +5,20 @@
                         
  a. The specs.
     Battery
+    Sensor: laser/vibration
+      Laser: https://www.bannerengineering.com/us/en/products/sensors/laser-distance-measurement.html#all
  b. The Materials.
-    note: Shock Resistance.
-    Arduino
  C. The machine learning. 
  d. The programming language. 
  e. Functions.
  f. Purpose. 
       1.to entertain the cat. 
       2.Maybe for little kids
- g. cost?
- h. 
+ g. 
+ 
+ 
+ Similar ideas:
+ http://www.instructables.com/id/How-To-Make-an-Obstacle-Avoiding-Arduino-Robot/
  
  
                         
