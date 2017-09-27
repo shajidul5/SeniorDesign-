@@ -11,13 +11,13 @@
  C. The machine learning. 
  d. The programming language. 
  e. Functions.
-      Robot:
+      Mouse:
       - near the cat but keeping some kind of close distance
       - be able to follow the cat
       - avoiding walls
       - self-driving 
       
-      Tower:
+      Tower (the brain):
       - gives the mouse directions
       - machine learning
       - has a 360 camera to be able to scan for the mouse
