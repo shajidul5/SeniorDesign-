@@ -8,8 +8,11 @@
       Sensor: laser/vibration
        Laser: https://www.bannerengineering.com/us/en/products/sensors/laser-distance-measurement.html#all
  b. The Materials.
- C. The machine learning. 
- d. The programming language. 
+ C. The machine learning.
+ d. The programming language.
+  Neuroduino
+  Arduino Basics
+  ArduinoANN
  e. Functions.
       Mouse:
       - near the cat but keeping some kind of close distance
