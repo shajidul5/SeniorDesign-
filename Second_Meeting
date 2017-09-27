@@ -4,13 +4,24 @@
                         Toy for a Cat
                         
  a. The specs.
-    Battery
-    Sensor: laser/vibration
-      Laser: https://www.bannerengineering.com/us/en/products/sensors/laser-distance-measurement.html#all
+      Battery
+      Sensor: laser/vibration
+       Laser: https://www.bannerengineering.com/us/en/products/sensors/laser-distance-measurement.html#all
  b. The Materials.
  C. The machine learning. 
  d. The programming language. 
  e. Functions.
+      Robot:
+      - near the cat but keeping some kind of close distance
+      - be able to follow the cat
+      - avoiding walls
+      - self-driving 
+      
+      Tower:
+      - gives the mouse directions
+      - machine learning
+      - has a 360 camera to be able to scan for the mouse
+      - be able to detect the mouse (infared -> cv)
  f. Purpose. 
       1.to entertain the cat. 
       2.Maybe for little kids
