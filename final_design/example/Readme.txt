@@ -1,4 +1,4 @@
-This is just a written code to visualize and project the idea to the class. 
+This is just a visualization of our project, it was made to project the idea to the class. 
 The reason I wrote it in JavaScript was because I found it easy.
 The main language of our project would be Java. 
 
