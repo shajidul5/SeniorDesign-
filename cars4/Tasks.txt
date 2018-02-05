@@ -1,0 +1,6 @@
+1. Create Schematic (flowchart) of deep learning
+2. Start working in the GUI(python)
+3. Decomposition of the images for the algorithm from the GUI. 
+4. Read papers. 
+
+
