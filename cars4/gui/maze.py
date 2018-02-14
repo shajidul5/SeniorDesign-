@@ -98,6 +98,10 @@ class Maze:
         #print("y=="+((str)(y)),end="")
         #print(" x=="+((str)(x)))
         return self.maze[y][x]
+    def get_cons(self):
+        return self.complexity
+    def get_dens(self):
+        return self.density
 #0=empty space
 #1=wall
 #a=Maze()
