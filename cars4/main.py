@@ -1,55 +1,66 @@
-#!/usr/bin/pyton3
 import pygame as sc
+import sys
 from gui.maze import Maze
-con=.2 #complexity
-dens=.2 #density
-maze=Maze(50,30,con,dens) #initiate object
-print(maze)
-sc.init() 
-screen=sc.display.set_mode((750,525))
-quit=False
-font=sc.font.SysFont(None ,24 )
-text=font.render("Right key:changes maze",True,(0,128,0))
-text1=font.render("Down Key: Increases Density",True,(0,128,0))
-text2=font.render("Up Key:Increases complexity",True,(0,128,0))
+from gui.states import States
+class Controls:
+    def __init__(self,size_w=750,size_h=525,fps=60):
+        self.done=False
+        self.W=size_w
+        self.H=size_h
+        self.fps=fps
+        #settings
+        self.window=sc.display.set_mode((self.W,self.H))
+        self.clock=sc.time.Clock()
+    def setup(self,states,start):
+        self.states=states
+        self.start_state=start
+        self.current_state=self.states[self.start_state]
+        
+    def state_change(self):
+        self.current_state.done=False
+        previous,self.start_state=self.start_state,self.current_state.next
+        self.current_state.cleanup()
+        self.current_state=self.states[self.start_state]
+        self.current_state.startup()
+        self.current_state.previous=previous
+        
+    def update(self,temp):
+        if self.current_state.quit:
+            self.done=True
+        elif self.current_state.done:
+            print("updating state\n")
+            self.state_change()
+        self.current_state.update(self.window,temp)
+    def event_loop(self):
+        for event in sc.event.get():
+            if event.type== sc.QUIT:
+                self.done=True
+            self.current_state.get_event(event)
 
-Cw=15 #cell width
-while not quit:
-    #events
-    for event in sc.event.get():
-        if event.type==sc.QUIT:
-            quit=True
-    pressed=sc.key.get_pressed()
-    if pressed[sc.K_RIGHT]:
-        maze=Maze(50,30,con,dens)
-    elif pressed[sc.K_UP]:
-        con=con+.02
-        maze=Maze(50,30,con,dens)
-    elif pressed[sc.K_DOWN]:
-        dens=dens+.02
-        maze=Maze(50,30,con,dens)
-  
-    #logic and render 
-    screen.fill((255,255,255))
-    screen.blit(text,(0,455))
-    screen.blit(text1,(0,505))
-    screen.blit(text2,(0,480))
-    screen.blit(font.render(( str(round(con,2))),True,(0,128,0)),(250,480))
-    screen.blit(font.render((str(round(dens,2))),True,(0,128,0)),(250,505))
-    
-    x1=0
-    y1=0
-    for a in range(0,maze.get_W()):
-        for b in range(0,maze.get_H()):
-            if maze.get_Value(b,a)==0: #road
-                #print(x1,y1) 
-                sc.draw.rect(screen,(128,128,128),sc.Rect(y1,x1,Cw,Cw))
-                sc.draw.rect(screen,(128,128,128),sc.Rect(y1,x1,Cw,Cw))
-            else: #walls
-                sc.draw.rect(screen,(130,82,1),sc.Rect(y1,x1,Cw,Cw))
-            x1=x1+Cw
-        y1=y1+Cw
-        x1=0 
-   
-    sc.display.flip() 
-    
+    def main_loop(self):
+        while not self.done:
+            timer=self.clock.tick(self.fps)/100.0
+            self.event_loop()
+            self.update(timer)
+            sc.display.update()
+
+if __name__=='__main__':
+    con,dens = .2,.2
+    states={
+        'Maze':Maze(50,30,con,dens) 
+        #add more states ... 
+    }
+    sc.key.set_repeat(1, 28)   
+    app=Controls(750,525,60) #(width of screen,height, frames per second)
+    app.setup(states,'Maze')
+    app.main_loop()
+    sc.quit()
+    sys.exit() 
+
+
+
+
+
+
+
+
