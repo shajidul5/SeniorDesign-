@@ -1,5 +1,11 @@
 # SeniorDesign-
-Meetings 
-
-For Contributors.
-Feel Free to edit or make any changes. 
+ 
+Tasks:
+  1. Initialize the neural network code, take input from the decomposition of the images.
+  2. Initialize the decomposition of images from the gui.
+  3. Initialize website.
+  4. Improve the GUI.
+    -Make road wider.
+    -Make turns possible.
+    
+  
