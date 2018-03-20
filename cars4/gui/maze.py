@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 import numpy
 import pygame as sc
-sc.init()
 from numpy.random import random_integers as rand
 from gui.states import States
 from gui.car import Car
 class Maze: 
     def __init__(self,w=20,h=20,complexity=.75,density=.75):
+        sc.init()
         self.font=sc.font.SysFont(None ,24 )
         self.text=self.font.render("Right key:changes maze",True,(0,128,0))
         self.text1=self.font.render("Down Key: Increases Density",True,(0,128,0))
@@ -95,6 +95,7 @@ class Maze:
                         maze[y1][x1]=1
                         maze[y1+(y-y1)//2][x1+(x-x1)//2]=1
                         x,y=x1,y1
+            
         return maze
         
     def get_Maze(self):

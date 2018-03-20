@@ -8,33 +8,34 @@ class Car:
         self.y=y
     
     def __str__(self):
+        #for debuffing puposes
         temp="x=="+self.x+" y=="+self.y
         return temp
     
-    def get_x(self):
+    def get_x(self): 
         return self.x
     
     def get_y(self):
         return self.y
     
-    def m_r(self):
+    def m_r(self): #move right
         self.x+=1
         return
     
-    def m_l(self):
+    def m_l(self): #move left
         self.x-=1
         return 
 
-    def m_u(self):
+    def m_u(self): #move up
         self.y-=1
         return
     
-    def m_d(self):
+    def m_d(self): #move down
         self.y+=1
         return
 
-    def get_w(self):
+    def get_w(self): #get the width
         return self.w
 
-    def get_h(self):
+    def get_h(self): #get the height
         return self.h 
