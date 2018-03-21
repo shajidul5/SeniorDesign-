@@ -47,8 +47,8 @@ class Controls:
 if __name__=='__main__':
     con,dens = .2,.2
     states={
-        'Maze':Maze(50,30,con,dens) 
-        #add more states ... 
+        'Maze':Maze(25,15,con,dens) 
+        #add more states ...  50 30
     }
     sc.key.set_repeat(1, 28)   
     app=Controls(750,525,60) #(width of screen,height, frames per second)
